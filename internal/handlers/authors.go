@@ -6,7 +6,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/burger/go-ci-books/internal/models"
 	"github.com/burger/go-ci-books/internal/store"
 )
 
@@ -30,8 +29,6 @@ func (h *AuthorHandler) GetAuthor(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{"error": "author not found"})
 		return
 	}
-
-	author = models.Author{ID: 1, Name: "The only author"}
 
 	c.JSON(http.StatusOK, author)
 }
